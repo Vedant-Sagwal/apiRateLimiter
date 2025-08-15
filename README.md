@@ -1,8 +1,12 @@
 # API Rate Limiter Service
 
-A Redis-backed API rate limiter with sliding-window and token-bucket strategies based on IP/user identity, with endpoint for both : public, admin.
-<br> 
-Separate http 429 error on reaching the limit and it also tells after how much seconds user can  reconnect
+The API Rate Limiter Service is a backend system designed to control how many requests a user or IP can make to an API within a specific time window.
+<br>
+It protects services from abuse, DDoS attacks, and excessive load by enforcing configurable request limits. Built using Node.js, Redis, and Docker, it supports multiple rate limiting algorithms such as Sliding Window, Token Bucket.
+<br>
+Redis acts as a distributed in-memory store, enabling the service to scale across multiple instances while keeping request counters synchronized. 
+<br>
+The service can be integrated as middleware into any API, allowing developers to configure limits per IP or per authenticated user. 
 
 ## Examples: 
 <h2> Hit the public endpoint</h2>
