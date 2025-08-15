@@ -1,6 +1,6 @@
 import redis1 from "../services/redisClient.js";
 
-async function slidingWindow(key, windowSize, maxRequests) {
+export async function slidingWindow(key, windowSize, maxRequests) {
   const nowMS = Date.now();
   const windowStart = nowMS - windowSize * 1000; //when window was started
 

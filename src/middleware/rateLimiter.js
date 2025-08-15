@@ -1,5 +1,5 @@
 import { config1 } from "../config.js"
-import { slidingWindow } from "../utils/slidingWindow.js";
+import slidingWindow from "../utils/slidingWindow.js";
 import { tokenBucket } from "../utils/tokenBucket.js";
 import { setLimitHeaders } from "../utils/headers.js"
 
@@ -9,7 +9,7 @@ function identityOf(req) {
   return val || req.ip; // fallback to IP if header missing
 }
 
-export default async function rateLimiter(req, res, next) {
+export async function rateLimiter(req, res, next) {
   const identity = identityOf(req);
   const maxRequests = config1.policy.maxRequests;
   const windowSize = config1.policy.windowSeconds;
