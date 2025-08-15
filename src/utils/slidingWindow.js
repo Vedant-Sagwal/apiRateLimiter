@@ -1,4 +1,4 @@
-import { redis1 } from "../services/redisClient.js";
+import redis1 from "../services/redisClient.js";
 
 async function slidingWindow(key, windowSize, maxRequests) {
   const nowMS = Date.now();

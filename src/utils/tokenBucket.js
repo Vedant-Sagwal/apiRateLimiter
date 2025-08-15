@@ -1,4 +1,4 @@
-import { redis1 } from "../services/redisClient.js"
+import redis1 from "../services/redisClient.js"
 
 export default async function tokenBucket(key, windowSize, maxRequests) {
   const rate = (max / (windowSize * 1000)); //per second

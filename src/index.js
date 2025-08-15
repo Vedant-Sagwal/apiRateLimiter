@@ -1,6 +1,6 @@
 import express from "express";
 import { config1 } from "./config.js";
-import { redis1 } from "./services/redisClient.js";
+import redis1 from "./services/redisClient.js";
 import publicRoutes from "./routes/public.js";
 import adminRoutes from "./routes/admin.js";
 import { rateLimiter } from "./middleware/rateLimiter.js";

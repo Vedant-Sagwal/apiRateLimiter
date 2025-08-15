@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { config1 } from "../config.js";
-import { redis1 } from "../services/redisClient.js";
+import redis1 from "../services/redisClient.js";
 
 const r = Router();
 
