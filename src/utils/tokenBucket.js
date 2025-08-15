@@ -1,10 +1,10 @@
-import redis from "../services/redisClient.js"
+import { redis1 } from "../services/redisClient.js"
 
 export default async function tokenBucket(key, windowSize, maxRequests) {
   const rate = (max / (windowSize * 1000)); //per second
   const zkey = `rl:tb:${key}`;
   const nowMS = Date.now();
-  const data = await redis.hmget(zkey, "tokens", "last");
+  const data = await redis1.hmget(zkey, "tokens", "last");
   const tokens = data[0] ? Number(data[0]) : maxRequests;
   const last = data[1] ? Number(data[1]) : nowMS;
 
@@ -27,8 +27,8 @@ export default async function tokenBucket(key, windowSize, maxRequests) {
     const waitTime = (1 - tokens) / rate;
     resetEpochSec = Math.ceil((nowMS + waitTime) / 1000);
   }
-  await redis.hset(zkey, { tokens, last });
+  await redis1.hset(zkey, { tokens, last });
   //expire if inactive
-  await redis.expire(zkey, Math.max(2, windowSize + 1));
+  await redis1.expire(zkey, Math.max(2, windowSize + 1));
   return { allowed, remaining, resetEpochSec };
 }
