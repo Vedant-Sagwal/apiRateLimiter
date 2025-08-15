@@ -5,7 +5,6 @@ A Redis-backed API rate limiter with sliding-window and token-bucket strategies 
 Separate http 429 error on reaching the limit and it also tells after how much seconds user can  reconnect
 
 ## Examples: 
-<br>
 <h2> Hit the public endpoint</h2>
 <img src="./images/Screenshot 2025-08-15 at 6.04.13 PM.png" alt="Image">
 <br>
