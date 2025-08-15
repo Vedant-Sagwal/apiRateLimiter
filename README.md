@@ -8,14 +8,10 @@ A Separate http 429 error on reaching the limit and it also tells after how much
 ```bash
 docker-compose up --build
 
-
-<br>
-<br>
-<br> 
 Examples: 
 <br>
 <h2> Hit the public endpoint</h2>
-<img src="./images/Screenshot 2025-08-15 at 6.04.13 PM.png">
+<img src="./images/Screenshot 2025-08-15 at 6.04.13 PM.png" alt="Image">
 <br>
 <h2> Tune limits at runtime</h2>
 <img src="./images/Screenshot 2025-08-15 at 6.05.43 PM.png">
