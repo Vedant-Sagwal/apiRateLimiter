@@ -7,7 +7,7 @@ function int(name, def) {
   return Number.isFinite(v) ? v : def;
 }
 
-export const config = {
+export const config1 = {
   port: int("PORT", 3000),
   redis: {
     host: process.env.REDIS_HOST || "127.0.0.1",
